@@ -29,6 +29,9 @@ namespace projBlazorUm
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+
+            services.AddDbContext<AppDBContext>
+                (options => options.UseSqlite($"Data Source=projBlazorUm.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
